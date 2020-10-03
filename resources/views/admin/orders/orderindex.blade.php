@@ -17,7 +17,7 @@
             </tr>
         </thead>
         
-            @if(count($orders)!=0)
+            @if(count($orders)>0)
                 @foreach ($orders as $order)
             <tbody>
                 <tr>

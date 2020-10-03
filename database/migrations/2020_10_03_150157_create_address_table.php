@@ -27,7 +27,7 @@ class CreateAddressTable extends Migration
             $table->string('locality')->nullable();
             $table->string('landmark')->nullable();
             $table->string('pin');
-            
+
             $table->timestamps();
         });
     }

@@ -49,6 +49,13 @@ Route::middleware('can:isAdmin')->namespace('Admin')->group(function () {
 });
 
 
+//feedback controller oruter
+Route::resource('feedbacks', 'FeedbackController');
+//Route::get('/feedbacks', 'FeedbackController@index');
+//Route::get('/feedbacks/{feedback}', 'FeedbackController@show');
+
+
+
 
 
 
