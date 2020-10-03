@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 class BookController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class BookController extends Controller
     public function index()
     {
         //
+
+        $books = Book::all();
+        return view('admin.book.index',['books' => $books]);
     }
 
     /**
@@ -23,7 +28,7 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    { //dd("fuvl");
         return view('admin.book.create');
     }
 
@@ -35,7 +40,27 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->getValidate();
+
+    
+        
+        $name = (request('name'));
+        $author = request('author_name');
+        $tag = $name.'-'.$author;
+        Book::create([
+            'book_name' => $name,
+            'author_name' => $author,
+            'category' => request('category'),
+            'sub_category' => request('sub_category'),
+            'stock' => request('stock'),
+            'tag' => $tag,
+            'image' => request('image')->store('category_images'),
+
+            'description' => request('description'),
+
+        ]);
+
+        return redirect('/book');
     }
 
     /**
@@ -81,5 +106,18 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         //
+    }
+    public function getValidate(): void
+    {
+        request()->validate([
+            'name' => 'required',
+
+            'author_name' => 'required',
+            'category' => 'required',
+            'sub_category' => 'required',
+            'image' => 'image',
+            'stock' => 'required|integer'
+
+        ]);
     }
 }
