@@ -21,12 +21,12 @@
                 @foreach ($orders as $order)
             <tbody>
                 <tr>
-                    <td>{{ $order->user_id }}</td>
-                    <td>{{ $order->book_id }}</td>
-                    <td>{{ $order->address_id }}</td>
+                    <td>{{ $order->user->name }}</td>
+                    <td>{{ $order->book->book_name }}</td>
+                    <td>{{ $order->address->pin }}</td>
                     <td>{{ $order->status }}</td>
-                    <td><a href="">delete request</a></td>
-                    <td><a href="">process request</a></td>
+                    
+                    <td><a href="/order/{{$order->id}}/details">process request</a></td>
                 </tr>
                 @endforeach
             </tbody>

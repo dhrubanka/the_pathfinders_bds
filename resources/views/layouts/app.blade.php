@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/book_styles.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -43,13 +44,13 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">About</a>
+                            <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Books</a>
+                            <a class="nav-link" href="/book/search">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contact Us</a>
+                            <a class="nav-link" href="/contact">Contact Us</a>
                         </li>
                         @auth
                         <li class="nav-item">

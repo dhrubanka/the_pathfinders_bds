@@ -1,0 +1,115 @@
+.navbar-dark{
+    background: linear-gradient(to bottom right, #304ffe, #1a35ce, #0b25b4 );
+}
+.row-header{
+    padding-top: 20px;
+    margin: 0px auto;
+    color: #304ffe;
+}
+
+.row-content{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin: 0px auto;
+    color: #304ffe;
+    border-bottom: 1px ridge;
+}
+
+.jumbotron{
+    padding: 100px 30px 50px;
+    margin: 0px auto;
+    background: linear-gradient(to bottom right, #445ffa, #3956fa, #304ffe );
+    color: floralwhite;
+}
+
+.badge{
+    padding:10px 20px;
+}
+
+.card{
+    box-shadow: 2px 2px 20px grey;
+}
+
+.card img{
+    height: 200px;
+    width: 100%;
+    padding: 0px;
+}
+
+.card-header{
+    background: linear-gradient(to bottom right, #fdd835, #fdd835, #fdd835);
+    color: #304ffe;
+    padding: 10px;
+}
+
+.card-body{
+    background: linear-gradient(to bottom right, #fdd835, #fdd835, #fdd835);
+    color: #304ffe;
+    padding: 10px;
+}
+
+#card1{
+    background: linear-gradient(to bottom right, #fdd835, #fdd835, #fdd835);
+    margin: 50px;
+    padding: 0px;
+}
+
+#card1 img{
+    height: 400px;
+}
+
+#card2{
+    background: linear-gradient(to bottom right, #fdd835, #fdd835, #fdd835);
+    margin: 30px;
+    padding: 30px;
+}
+
+.footer{
+    background: linear-gradient(to bottom right, #304ffe,  #304ffe);
+    margin: 0px auto;
+    padding: 20px 0px;  
+    color: #fdd835;
+}
+
+footer a{
+    color: #fdd835;
+}
+
+address{
+    font-size: 90%;
+}
+
+address #mailid{
+    color: #304ffe;
+}
+
+.breadcrumb{
+    margin-top: 50px;
+    background: url(storage/img/lb.jpg);
+}
+
+.breadcrumb .breadcrumb-item a{
+    color: #ffd000;
+}
+
+.table{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.dropbtn{
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+  
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 230px;
+    z-index: 1;
+}

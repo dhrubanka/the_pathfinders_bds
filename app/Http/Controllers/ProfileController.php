@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Address;
 use App\Order;
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -14,8 +15,9 @@ class ProfileController extends Controller
     }
     public function index()
     {
-       
-        return view('profile.myprofile');
+        $addresses = Address::where('user_id', Auth::user()->id )->get();
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+        return view('profile.myprofile',[ 'addresses' => $addresses,'orders'=> $orders ]);
     }
     public function addressCreate(){
         return view('profile.address_create');
@@ -42,6 +44,6 @@ class ProfileController extends Controller
             'status' => request('status'),
             
         ]);
-        return redirect('/profile');
+        return redirect('/profile/#pills-order');
     }
 }

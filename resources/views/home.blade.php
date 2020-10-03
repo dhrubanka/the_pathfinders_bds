@@ -9,7 +9,7 @@
                 <a class="btn btn-block btn-lg btn-warning" role="button" href="donate_form.html" id="donateBtn">DONATE BOOK</a>
             </div>
             <div class="col-12 offset-sm-2 col-sm-4">
-                <a class="btn btn-block btn-lg btn-warning" role="button" href="#" id="requestBtn">REQUEST BOOK</a>
+                <a class="btn btn-block btn-lg btn-warning" role="button" href="/book/search" id="requestBtn">REQUEST BOOK</a>
             </div>
         </div>
     </div>
@@ -51,32 +51,27 @@
         </div>
     </div>
     <div class="row row-content">
+        @foreach($academics as $abook)
         <div class="col-12 col-sm-3">
-            <div class="card">
-                    <img src="pics/software_engineering_rajib_mall.png">
-                <div class="card-header">
-                    <h3 class="card-title">Fundaments of Software Engineering</h3>
-                    Author- Rajib Mall<br>
+            <a href="details.html">
+                <div class="card">
+                    @if($book->image == NULL)
+                         <img src="storage/img/default-book.png" style="height: 200px;width:100%">
+                    @else
+                        <img  src="storage/{{$abook->image }}" style="height: 200px;width:100%">
+                    @endif
+                        
+                    <div class="card-header">
+                        <h3 class="card-title">{{ $abook->book_name}}</h3>
+                    Author- {{ $abook->author_name}}<br>
+                    </div>
+                    <div class="card-body d-none d-sm-block">
+                    <a href="{{route('book-detail',['id'=>$abook->id ])}}" class="btn btn-danger"> Request Book</a>
+                    </div>
                 </div>
-                <div class="card-body d-none d-sm-block">
-                    A book on software engineering fundamentals for beginners
-                </div>
-            </div>
+            </a>
         </div>
-
-        <div class="col-12 col-sm-3">
-            <div class="card">
-                    <img src="pics/software_engineering_rajib_mall.png">
-                <div class="card-header">
-                    <h3 class="card-title">Fundaments of Software Engineering</h3>
-                    Author- Rajib Mall<br>
-                </div>
-                <div class="card-body d-none d-sm-block">
-                    A book on software engineering fundamentals for beginners
-                </div>
-            </div>
-        </div>
-        
+        @endforeach
        
 
     </div>
@@ -86,25 +81,34 @@
         </div>
     </div>
     <div class="row row-content">
+        @foreach($unacademics as $uabook)
         <div class="col-12 col-sm-3">
-            <div class="card">
-                    <img src="pics/software_engineering_rajib_mall.png">
-                <div class="card-header">
-                    <h3 class="card-title">Fundaments of Software Engineering</h3>
-                    Author- Rajib Mall<br>
+            <a href="details.html">
+                <div class="card">
+                    @if($book->image == NULL)
+                         <img src="storage/img/default-book.png" style="height: 200px;width:100%">
+                    @else
+                        <img  src="storage/{{$uabook->image }}" style="height: 200px;width:100%">
+                    @endif
+                        
+                    <div class="card-header">
+                        <h3 class="card-title">{{ $uabook->book_name}}</h3>
+                    Author- {{ $uabook->author_name}}<br>
+                    </div>
+                    <div class="card-body d-none d-sm-block">
+                    <a href="{{route('book-detail',['id'=>$uabook->id ])}}" class="btn btn-danger"> Request Book</a>
+                    </div>
                 </div>
-                <div class="card-body d-none d-sm-block">
-                    A book on software engineering fundamentals for beginners
-                </div>
-            </div>
+            </a>
         </div>
+        @endforeach
        
        
        
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer" style="margin-bottom: -1.5em;">
     <div class="container">
         <div class="row">
             <div class="col-12 offset-sm-1 col-sm-4">

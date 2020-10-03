@@ -44,16 +44,13 @@
                 <div class="form-group row">
                     <label for="InputCat" class="col-md-2 col-form-label">Category</label>
                     <div class="col-md-10">
-                        <input type="text"
-                               class="form-control @error('category') is-invalid  @enderror"
-                               id="InputCat"
-                               name="category"
-                               placeholder="Enter Category"
-                               value="{{ old('category') }}" >
+                        <select class="form-control" name="category" id="exampleFormControlSelect1">
+                            
+                            <option value="1">Academic</option>
+                            <option value="2">Non-Academic</option>
+                            </select>
                      </div>
-                     @error('category')
-                        <p class="text-danger" >{{ $errors->first('category')}}</p>
-                     @enderror
+                     
                 </div>
 
                 <div class="form-group row">

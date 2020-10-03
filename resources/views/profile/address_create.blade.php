@@ -7,7 +7,7 @@
             <h3 class="class-header m-3 text-center"><b>Add a address </b></h3>
             <form method="POST" action="/ProfileController/address/store" enctype="multipart/form-data">
                 @csrf
-            <input class="" name="user_id" value="{{Auth::user()->id}}">
+            <input class="d-none" name="user_id" value="{{Auth::user()->id}}">
                 <div class="form-group row">
                     <label for="InputState" class="col-md-2 col-form-label">State</label>
                     <div class="col-md-10">

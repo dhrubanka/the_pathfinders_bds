@@ -50,6 +50,9 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+        $orderd = Order::find($order->id);
+       // dd($orderd);
+        return view('admin.orders.orderdetail', ['order' => $orderd]);
     }
 
     /**

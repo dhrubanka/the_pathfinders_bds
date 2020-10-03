@@ -35,7 +35,6 @@ class CreateOrdersTable extends Migration
             
             
 
-            $table->string('status');
 
             $table->timestamps();
         });

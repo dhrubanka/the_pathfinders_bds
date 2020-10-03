@@ -16,8 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', "HomeController@index");
 //Home Controls
 Route::get('/home', "HomeController@index");
-Route::get('/home/{id}/book' , "HomeController@bookDetails")->name('book-detail');
-
+Route::middleware('auth')->get('/home/{id}/book' , "HomeController@bookDetails")->name('book-detail');
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/book/search', "HomeController@bookall");
+Route::get('/book/searchA', "HomeController@bookaca");
+Route::get('/book/searchB', "HomeController@bookbaca");
 //Profile Control
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile/address/create', 'ProfileController@addressCreate')->name('profile-address');
@@ -45,7 +53,7 @@ Route::middleware('can:isAdmin')->namespace('Admin')->group(function () {
 
     //ordercontroll
     Route::get('/order_index', 'OrderController@index')->name('orderIndex');
-    
+    Route::get('/order/{order}/details', 'OrderController@show')->name('order-details');
 
 });
 

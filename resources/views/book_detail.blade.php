@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row row-content">
-        <ol class="col-12 breadcrumb">
+        <ol class="col-12 breadcrumb" style="background-color: rgb(121, 68, 38)">
             <li class="breadcrumb-item"><a href="book_home.html">Home</a></li>
             <li class="breadcrumb-item active"><a href="#">Book Details</a></li>
         </ol>
@@ -79,9 +79,9 @@
                         <form method="POST" action="/Profile/request/store" >
                             @csrf
                             
-                            <input class="" name="book_id" value="{{$book->id}}">
-                            <input class="" name="user_id" value="{{Auth::user()->id}}">
-                            <input class="" name="status" value="pending">
+                            <input class="d-none" name="book_id" value="{{$book->id}}">
+                            <input class="d-none" name="user_id" value="{{Auth::user()->id}}">
+                            <input class="d-none" name="status" value="pending">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">select</label>
                                 <select class="form-control" name="address_id" id="exampleFormControlSelect1">
