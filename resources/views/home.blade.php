@@ -8,11 +8,8 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-<<<<<<< HEAD
                     
-=======
                     Debayan
->>>>>>> 043997c00eea7dbdffaf12461b4af2d60ff2ec75
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
