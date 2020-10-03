@@ -30,6 +30,7 @@ Route::middleware('guest')->get('/admin', function(){
 
 
 Route::middleware('can:isAdmin')->namespace('Admin')->group(function () {
+    
     Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin-dashboard');
     Route::get('/admin/logout', 'AdminController@logout')->name('admin-logout');
 
