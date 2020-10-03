@@ -10,8 +10,8 @@
         <div class="col-sm-2 text-left"><a href="/book/create/"><button type="button" class="btn btn-primary ">
         Create New</button></a></div>
     </div>
-    <div class="row">
-        <div class="col-12 offset-sm-2 col-sm-8">
+    <div class="row" style="margin: 2em; with:100%">
+        <div class="col-12  col-sm-12">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -22,24 +22,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($books as $book)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Fundamentals of Software Engineering</td>
-                        <td>Rajib Mall</td>
+                    <th scope="row">{{ $book->id}}</th>
+                        <td>{{ $book->book_name}}</td>
+                        <td>{{ $book->author_name}}</td>
                         <td><a class="btn btn-primary btn-lg" role="button" href="details.html">Details</a></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Programming in C</td>
-                        <td>Jayapoovan</td>
-                        <td><a class="btn btn-primary btn-lg" role="button" href="#">Details</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Fundamentals of Software Engineering</td>
-                        <td>Rajib Mall</td>
-                        <td><a class="btn btn-primary btn-lg" role="button" href="details.html">Details</a></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
