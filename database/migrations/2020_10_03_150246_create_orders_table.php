@@ -15,20 +15,20 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('book_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('address_id');
+            $table->string('status');
+            
             $table->foreign('book_id')
             ->references('id')
-            ->on('book');
+            ->on('books');
             
 
-            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users');
-            
 
-            $table->unsignedBigInteger('address_id');
             $table->foreign('address_id')
             ->references('id')
             ->on('address');

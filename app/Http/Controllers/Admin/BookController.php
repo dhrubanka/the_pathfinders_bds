@@ -42,8 +42,12 @@ class BookController extends Controller
     {
         $this->getValidate();
 
-    
-        
+        if(request('image')) {
+            Book::create([
+                'image' => request('image')->store('book_images')
+
+            ]);
+            }
         $name = (request('name'));
         $author = request('author_name');
         $tag = $name.'-'.$author;
@@ -54,8 +58,6 @@ class BookController extends Controller
             'sub_category' => request('sub_category'),
             'stock' => request('stock'),
             'tag' => $tag,
-            'image' => request('image')->store('category_images'),
-
             'description' => request('description'),
 
         ]);

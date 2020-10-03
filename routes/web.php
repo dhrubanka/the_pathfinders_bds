@@ -13,14 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/', "HomeController@index");
+//Home Controls
+Route::get('/home', "HomeController@index");
+Route::get('/home/{id}/book' , "HomeController@bookDetails")->name('book-detail');
 
-Auth::routes();
+//Profile Control
+Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::get('/profile/address/create', 'ProfileController@addressCreate')->name('profile-address');
+Route::post('/ProfileController/address/store', 'ProfileController@addressStore');
+Route::post('/Profile/request/store', 'ProfileController@requestStore');
+
+Auth::routes();//Authentication
 
 Route::middleware('guest')->get('/admin', function(){
 
