@@ -39,6 +39,13 @@ Route::middleware('can:isAdmin')->namespace('Admin')->group(function () {
     Route::post('/book/store', 'BookController@store');
     Route::get('book/{book}', 'BookController@show');
 
+    //ordercontroll
+    Route::get('/order_index', 'OrderController@index')->name('orderIndex');
+    
+
 });
+
+
+
 
 
